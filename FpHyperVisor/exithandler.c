@@ -198,6 +198,7 @@ BOOLEAN VmxVmexitHandler(GpRegisters* pGuestRegisters)
 		kprintf("vm inst");
 		__vmx_vmread(GuestRflags, &guestRflag);
 		guestRflag.fields.cf = 1;
+		UtilVmxWrite(GuestRflags, guestRflag.all);
 		VmmAdjustGuestRip();
 		break;
 	}
