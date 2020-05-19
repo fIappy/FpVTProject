@@ -64,7 +64,6 @@ BOOLEAN VmxInitMsrBitmap()
 	ULONG_PTR writeMsrLow = readMsrHigh + 1024;
 	ULONG_PTR writeMsrHigh = writeMsrLow + 1024;
 
-	//SetPageBits(g_MsrBitmap, (MsrLstar & 0x1fff + 1024) * 8, 1);//syscall hook
 
 	return TRUE;
 }
